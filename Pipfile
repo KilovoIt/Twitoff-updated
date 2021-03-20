@@ -21,4 +21,4 @@ flask-migrate = "*"
 sqlalchemy = "==1.3.23"
 
 [requires]
-python_version = "3.8"
+python_version = "3.9"
