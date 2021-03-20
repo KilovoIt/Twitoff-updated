@@ -11,7 +11,7 @@ def create_app():
 
     BASE_DIR = os.path.dirname(os.path.abspath(__file__))
     db_path = os.path.join(BASE_DIR, "db.sqlite3")
-    app.config["SQLALCHEMY_DATABASE_URI"] = 'sqlite:///db.sqlite3'
+    app.config["SQLALCHEMY_DATABASE_URI"] = getenv("DATABASE_URL")
     app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
     DB.init_app(app)
 
