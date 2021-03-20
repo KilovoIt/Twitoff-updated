@@ -15,8 +15,9 @@ jinja2 = "*"
 python-dotenv = "*"
 scikit-learn = "*"
 gunicorn = "*"
-psycopg2-binary = "*"
 sqlalchemy-redshift = "*"
+psycopg2-binary = "*"
+psycopg2 = "*"
 
 [requires]
 python_version = "3.9"
