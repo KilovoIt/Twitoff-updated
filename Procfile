@@ -1,2 +1,2 @@
-web: gunicorn app:app
+web: gunicorn twitoff/app:app
 heroku ps:scale web=1
