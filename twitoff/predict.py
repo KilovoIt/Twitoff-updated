@@ -12,7 +12,7 @@ def predict_user(user0_name, user1_name, tweet_text):
 
      vects = np.vstack([user0_vects, user1_vects])
 
-     labels = np.concatenate([np.zeros(len(user0.tweets)), np.ones(len(user1.tweets))], axis=1)
+     labels = np.concatenate([np.zeros(len(user0.tweets)), np.ones(len(user1.tweets))])
      logistic_regression = LogisticRegression().fit(vects, labels)
      vect_tweet_text = vectorize_tweet(tweet_text).reshape(1, -1)
      return logistic_regression.predict(vect_tweet_text)
