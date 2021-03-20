@@ -14,6 +14,7 @@ tweepy = "*"
 jinja2 = "*"
 python-dotenv = "*"
 scikit-learn = "*"
+gunicorn = "*"
 
 [requires]
 python_version = "3.9"
