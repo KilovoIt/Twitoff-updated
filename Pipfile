@@ -6,7 +6,6 @@ verify_ssl = true
 [dev-packages]
 
 [packages]
-sqlalchemy = "*"
 flask-sqlalchemy = "*"
 flask = "*"
 spacy = "*"
@@ -18,6 +17,8 @@ gunicorn = "*"
 sqlalchemy-redshift = "*"
 psycopg2-binary = "*"
 psycopg2 = "*"
+flask-migrate = "*"
+sqlalchemy = "==1.3.23"
 
 [requires]
-python_version = "3.9"
+python_version = "3.8"
