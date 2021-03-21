@@ -8,7 +8,7 @@ def predict_user(user0_name, user1_name, tweet_text):
      user0 = User.query.filter(User.name == user0_name).one()
      user1 = User.query.filter(User.name == user1_name).one()
      user0_vects = np.array([tweet.vect for tweet in user0.tweets])
-     user1_vects = np.array([tweet.vect for tweet in user1.tweets], dtype=user0_vects.dtype)
+     user1_vects = np.array([tweet.vect for tweet in user1.tweets])
 
      vects = np.vstack([user0_vects, user1_vects])
 
