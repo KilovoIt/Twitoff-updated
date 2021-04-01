@@ -16,11 +16,13 @@ def create_app():
     DB.init_app(app)
 
     @app.route('/')
+    """Main route for the app, the front page"""
     def root():
         return render_template("base.html", title="Home", users=User.query.all())
 
 
     @app.route("/compare", methods=["POST"])
+    """compare button"""
     def compare():
         user0, user1 = sorted([request.values["user0"], request.values["user1"]])
         if user0 == user1:
@@ -35,6 +37,7 @@ def create_app():
     
     @app.route("/user", methods=["POST"])
     @app.route("/user/<name>", methods=["GET"])
+    """User info"""
     def user(name=None, message=''):
         name = name or request.values["user_name"]
         try:
@@ -52,12 +55,14 @@ def create_app():
         return render_template("user.html", title=name, tweets=tweets, message=message)
 
     @app.route("/update")
+    """Update database button"""
     def update():
         update_all_users()
         return render_template("base.html", title="Users Updated", users=User.query.all())
 
 
     @app.route("/reset")
+    """Reset database button"""
     def reset():
         DB.drop_all()
         DB.create_all()
