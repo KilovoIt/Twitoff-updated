@@ -16,10 +16,13 @@ class User(DB.Model):
 class Tweet(DB.Model):
     """Twitter Tweets that corresspond to users"""
     id = DB.Column(DB.BigInteger, primary_key=True)
+    """Tweet text"""
     text = DB.Column(DB.Unicode(300))
+    """Vectorized data field"""
     vect = DB.Column(DB.PickleType, nullable=False)
     user_id = DB.Column(DB.BigInteger, DB.ForeignKey(
         "user.id"), nullable=False)
+    """Backref that connects tweet to a corresponding user"""
     user = DB.relationship("User", backref=DB.backref("tweets", lazy=True))
 
     def __repr__(self):
